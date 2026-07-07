@@ -155,13 +155,13 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-heigh
   cursor:pointer;font-size:15px;line-height:1}
 .iconbtn:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
 
-#viewer{flex:1;min-height:0;overflow:auto;padding:26px;display:flex;justify-content:center;align-items:flex-start}
+#viewer{flex:1;min-height:0;overflow:auto;padding:26px;display:flex;align-items:flex-start}
 #sheet{background:var(--sheet);border:1px solid var(--sheet-line);border-radius:10px;box-shadow:var(--shadow);
-  padding:20px;max-width:100%}
+  padding:20px;width:max-content;margin-inline:auto}
 #sheet.swap{animation:swap .18s ease}
 @keyframes swap{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 #plate-host{display:block}
-#plate-host svg{display:block;width:100%;height:auto;max-width:none}
+#plate-host svg{display:block;height:auto;max-width:none}
 #plate-host svg [data-arch-a11y="visible-title"]{display:none}  /* title lives in the chrome */
 #foot{display:flex;gap:16px;align-items:center;padding:8px 24px;border-top:1px solid var(--line);
   background:var(--panel);font-family:var(--mono);font-size:11px;color:var(--faint)}
@@ -246,7 +246,18 @@ let current = null, zoom = 100;
     </section>`).join('');
 })();
 
-function applyZoom(){ const s = q('#plate-host svg'); if (s) s.style.width = zoom + '%'; }
+const viewer = q('#viewer'), sheet = q('#sheet');
+// Available content width inside the sheet at 100% ("fit to width"). Zoom scales
+// off this so the diagram is sized in real pixels — the sheet then shrink-wraps it
+// (width:max-content) and grows past the viewport, keeping the rounded card intact.
+function availWidth(){
+  const vs = getComputedStyle(viewer), ss = getComputedStyle(sheet);
+  const inner  = viewer.clientWidth - parseFloat(vs.paddingLeft) - parseFloat(vs.paddingRight);
+  const chrome = parseFloat(ss.paddingLeft) + parseFloat(ss.paddingRight)
+               + parseFloat(ss.borderLeftWidth) + parseFloat(ss.borderRightWidth);
+  return Math.max(0, inner - chrome);
+}
+function applyZoom(){ const s = q('#plate-host svg'); if (s) s.style.width = Math.round(availWidth() * zoom / 100) + 'px'; }
 function setZoom(z){ zoom = Math.max(25, Math.min(400, z)); applyZoom(); }
 
 function select(id){
@@ -275,6 +286,7 @@ document.querySelectorAll('.reg-item').forEach(b => b.addEventListener('click', 
 q('#zin').onclick  = () => setZoom(zoom + 25);
 q('#zout').onclick = () => setZoom(zoom - 25);
 q('#zfit').onclick = () => setZoom(100);
+addEventListener('resize', applyZoom);  // keep "fit" honest when the window changes
 
 q('#register').addEventListener('keydown', e => {
   if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
