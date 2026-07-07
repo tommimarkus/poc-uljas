@@ -1,0 +1,642 @@
+{
+  "schema": "souroldgeezer.architecture.dediren.project.v2",
+  "feature": "uljas",
+  "models": [
+    {
+      "id": "arch",
+      "file": "model.json",
+      "profile": "archimate"
+    },
+    {
+      "id": "uml",
+      "file": "model-uml.json",
+      "profile": "uml"
+    }
+  ],
+  "views": [
+    {
+      "id": "context",
+      "model": "arch",
+      "title": "Uljas — järjestelmäkonteksti",
+      "diagramKind": "Application Cooperation",
+      "question": "Miten hakijan tietojärjestelmä ja Uljas toimivat yhteen SFTP-sanomarajapinnan kautta?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/context.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/context.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy.json",
+        "metadata": "generated/render-metadata/context.json",
+        "output": "generated/svg/context.svg"
+      }
+    },
+    {
+      "id": "onboarding",
+      "model": "arch",
+      "title": "Tietojärjestelmähakijaksi liittyminen",
+      "diagramKind": "Business Process Cooperation",
+      "question": "Mitkä vaiheet vievät tietojärjestelmähakijan luvasta tuotantokäyttöön?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/onboarding.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/onboarding.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy.json",
+        "metadata": "generated/render-metadata/onboarding.json",
+        "output": "generated/svg/onboarding.svg"
+      }
+    },
+    {
+      "id": "message-catalog",
+      "model": "arch",
+      "title": "Sanomaluettelo (in/out)",
+      "diagramKind": "Application Cooperation",
+      "question": "Mitä sanomia rajapinta välittää ja mihin suuntaan (in/out) kukin kulkee?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/message-catalog.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/message-catalog.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy.json",
+        "metadata": "generated/render-metadata/message-catalog.json",
+        "output": "generated/svg/message-catalog.svg"
+      }
+    },
+    {
+      "id": "matter-lifecycle",
+      "model": "arch",
+      "title": "Ulosottoasian elinkaari",
+      "diagramKind": "Business Process Cooperation",
+      "question": "Miten ulosottoasia etenee vireilletulosta täytäntöönpanon, tilityksen ja passiiviperinnän kautta?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/matter-lifecycle.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/matter-lifecycle.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy.json",
+        "metadata": "generated/render-metadata/matter-lifecycle.json",
+        "output": "generated/svg/matter-lifecycle.svg"
+      }
+    },
+    {
+      "id": "deployment",
+      "model": "arch",
+      "title": "Tiedonsiirto (SFTP-välityspalvelu)",
+      "diagramKind": "Technology Usage",
+      "question": "Miten XML-aineisto siirtyy SFTP-välityspalvelun (to_uljas/from_uljas) kautta osapuolten välillä?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/deployment.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/deployment.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy.json",
+        "metadata": "generated/render-metadata/deployment.json",
+        "output": "generated/svg/deployment.svg"
+      }
+    },
+    {
+      "id": "data-dt",
+      "model": "uml",
+      "title": "Uljas Datatypes — tietomalli",
+      "diagramKind": "UML Data",
+      "question": "Mikä on Uljas Datatypes -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-dt.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-dt.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-dt.json",
+        "output": "generated/svg/data-dt.svg"
+      }
+    },
+    {
+      "id": "data-ct",
+      "model": "uml",
+      "title": "Uljas Complex Types — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Uljas Complex Types -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-ct.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-ct.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-ct.json",
+        "output": "generated/svg/data-ct.svg"
+      }
+    },
+    {
+      "id": "data-co",
+      "model": "uml",
+      "title": "Uljas Codes — tietomalli",
+      "diagramKind": "UML Data",
+      "question": "Mikä on Uljas Codes -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-co.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-co.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-co.json",
+        "output": "generated/svg/data-co.svg"
+      }
+    },
+    {
+      "id": "data-he",
+      "model": "uml",
+      "title": "Hakemuserä — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Hakemuserä -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-he.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-he.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-he.json",
+        "output": "generated/svg/data-he.svg"
+      }
+    },
+    {
+      "id": "data-hep",
+      "model": "uml",
+      "title": "Hakemuseräpalaute — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Hakemuseräpalaute -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-hep.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-hep.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-hep.json",
+        "output": "generated/svg/data-hep.svg"
+      }
+    },
+    {
+      "id": "data-me",
+      "model": "uml",
+      "title": "Muutoserä — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Muutoserä -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-me.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-me.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-me.json",
+        "output": "generated/svg/data-me.svg"
+      }
+    },
+    {
+      "id": "data-mep",
+      "model": "uml",
+      "title": "Muutoseräpalaute — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Muutoseräpalaute -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-mep.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-mep.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-mep.json",
+        "output": "generated/svg/data-mep.svg"
+      }
+    },
+    {
+      "id": "data-vt",
+      "model": "uml",
+      "title": "Vireilletuloilmoitus (ulosottoasiat) — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Vireilletuloilmoitus (ulosottoasiat) -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-vt.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-vt.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-vt.json",
+        "output": "generated/svg/data-vt.svg"
+      }
+    },
+    {
+      "id": "data-st",
+      "model": "uml",
+      "title": "Saldotiedustelu — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Saldotiedustelu -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-st.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-st.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-st.json",
+        "output": "generated/svg/data-st.svg"
+      }
+    },
+    {
+      "id": "data-stv",
+      "model": "uml",
+      "title": "Saldotiedusteluvastaus — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Saldotiedusteluvastaus -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-stv.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-stv.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-stv.json",
+        "output": "generated/svg/data-stv.svg"
+      }
+    },
+    {
+      "id": "data-ti",
+      "model": "uml",
+      "title": "Tilityserittely — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Tilityserittely -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-ti.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-ti.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-ti.json",
+        "output": "generated/svg/data-ti.svg"
+      }
+    },
+    {
+      "id": "data-mk",
+      "model": "uml",
+      "title": "Maksukiellot — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Maksukiellot -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-mk.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-mk.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-mk.json",
+        "output": "generated/svg/data-mk.svg"
+      }
+    },
+    {
+      "id": "data-mkp",
+      "model": "uml",
+      "title": "Maksukiellon palauttaminen — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Maksukiellon palauttaminen -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-mkp.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-mkp.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-mkp.json",
+        "output": "generated/svg/data-mkp.svg"
+      }
+    },
+    {
+      "id": "data-mkpp",
+      "model": "uml",
+      "title": "Maksukiellon palauttamisen palaute — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Maksukiellon palauttamisen palaute -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-mkpp.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-mkpp.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-mkpp.json",
+        "output": "generated/svg/data-mkpp.svg"
+      }
+    },
+    {
+      "id": "data-pp",
+      "model": "uml",
+      "title": "Passiiviperinnän päättymisilmoitus — tietomalli",
+      "diagramKind": "UML Class",
+      "question": "Mikä on Passiiviperinnän päättymisilmoitus -sanoman rakenne, tietotyypit ja kardinaliteetit?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/data-pp.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/data-pp.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/data-pp.json",
+        "output": "generated/svg/data-pp.svg"
+      }
+    },
+    {
+      "id": "seq-submission",
+      "model": "uml",
+      "title": "Hakemuserän toimitus (sekvenssi)",
+      "diagramKind": "UML Sequence",
+      "question": "Miten Hakemuserän toimitus etenee osapuolten välillä SFTP-välityksessä?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/seq-submission.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/seq-submission.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/seq-submission.json",
+        "output": "generated/svg/seq-submission.svg"
+      }
+    },
+    {
+      "id": "seq-change",
+      "model": "uml",
+      "title": "Muutoserän toimitus (sekvenssi)",
+      "diagramKind": "UML Sequence",
+      "question": "Miten Muutoserän toimitus etenee osapuolten välillä SFTP-välityksessä?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/seq-change.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/seq-change.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/seq-change.json",
+        "output": "generated/svg/seq-change.svg"
+      }
+    },
+    {
+      "id": "seq-balance",
+      "model": "uml",
+      "title": "Saldotiedustelu (sekvenssi)",
+      "diagramKind": "UML Sequence",
+      "question": "Miten Saldotiedustelu etenee osapuolten välillä SFTP-välityksessä?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/seq-balance.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/seq-balance.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/seq-balance.json",
+        "output": "generated/svg/seq-balance.svg"
+      }
+    },
+    {
+      "id": "seq-maksukielto",
+      "model": "uml",
+      "title": "Maksukiellon palauttaminen (sekvenssi)",
+      "diagramKind": "UML Sequence",
+      "question": "Miten Maksukiellon palauttaminen etenee osapuolten välillä SFTP-välityksessä?",
+      "projection": {
+        "plugin": "generic-graph",
+        "target": "layout-request"
+      },
+      "metadata": {
+        "plugin": "generic-graph",
+        "target": "render-metadata",
+        "output": "generated/render-metadata/seq-maksukielto.json"
+      },
+      "layout": {
+        "plugin": "elk-layout",
+        "output": "generated/layout/seq-maksukielto.json"
+      },
+      "render": {
+        "plugin": "render",
+        "policy": "render-policy-uml.json",
+        "metadata": "generated/render-metadata/seq-maksukielto.json",
+        "output": "generated/svg/seq-maksukielto.svg"
+      }
+    }
+  ]
+}

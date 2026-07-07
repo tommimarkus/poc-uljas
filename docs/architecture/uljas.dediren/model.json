@@ -1,0 +1,1475 @@
+{
+  "model_schema_version": "model.schema.v1",
+  "required_plugins": [
+    {
+      "id": "generic-graph",
+      "version": "2026.07.8"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "br-hakija",
+      "type": "BusinessRole",
+      "label": "Tietojärjestelmähakija",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §1",
+        "rationale": "Creditor/agent authorised to file enforcement applications from its own system."
+      }
+    },
+    {
+      "id": "br-asiamies",
+      "type": "BusinessRole",
+      "label": "Asiamies",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §1",
+        "rationale": "Agent acting on behalf of the creditor; may hold the applicant licence."
+      }
+    },
+    {
+      "id": "br-valittaja",
+      "type": "BusinessRole",
+      "label": "Tekninen välittäjä",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1",
+        "rationale": "Technical intermediary that performs the SFTP transfer for the applicant; removes the need for a liikennöintisopimus."
+      }
+    },
+    {
+      "id": "ba-ulosotto",
+      "type": "BusinessActor",
+      "label": "Ulosottolaitos",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1",
+        "rationale": "National Enforcement Authority; grants the information-system-applicant licence and decides on production access."
+      }
+    },
+    {
+      "id": "ba-ork",
+      "type": "BusinessActor",
+      "label": "Oikeusrekisterikeskus (ORK)",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1-2.2",
+        "rationale": "Legal Register Centre; runs joint testing, issues credentials, operates the technical interface."
+      }
+    },
+    {
+      "id": "ba-valtori",
+      "type": "BusinessActor",
+      "label": "Valtori",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §1",
+        "rationale": "State ICT provider operating the VIA integration platform used for message transfer."
+      }
+    },
+    {
+      "id": "br-velallinen",
+      "type": "BusinessRole",
+      "label": "Velallinen",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.1.1",
+        "rationale": "Debtor against whom enforcement is sought; receives the payment demand. Context participant."
+      }
+    },
+    {
+      "id": "bsvc-tjhaku",
+      "type": "BusinessService",
+      "label": "Tietojärjestelmähakeminen",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §1",
+        "rationale": "Electronic information-system-applicant filing channel offered to high-volume creditors."
+      }
+    },
+    {
+      "id": "bsvc-ulosotto",
+      "type": "BusinessService",
+      "label": "Ulosottopalvelu",
+      "properties": {
+        "layer": "Business",
+        "evidence": "architect-owned",
+        "rationale": "Enforcement (debt-collection) service the authority provides to creditors; overarching business service."
+      }
+    },
+    {
+      "id": "bp-lupa-haku",
+      "type": "BusinessProcess",
+      "label": "Hae tietojärjestelmähakijan lupa",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1",
+        "rationale": "Applicant submits a licence application (private-law vs public-law claims) to Ulosottolaitos."
+      }
+    },
+    {
+      "id": "bp-lupaluonnos",
+      "type": "BusinessProcess",
+      "label": "Laadi lupaluonnos",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1",
+        "rationale": "Ulosottolaitos issues a draft licence and forwards it to ORK."
+      }
+    },
+    {
+      "id": "bp-toimita-lomakkeet",
+      "type": "BusinessProcess",
+      "label": "Toimita tiedot ja liikennöintisopimus",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1",
+        "rationale": "Applicant submits the applicant-details form and connectivity agreement to obtain credentials."
+      }
+    },
+    {
+      "id": "bp-yhteistestaus",
+      "type": "BusinessProcess",
+      "label": "Yhteistestaus",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.2",
+        "rationale": "Joint testing with ORK covering application/change batches, feedback, notices, settlement, passive collection."
+      }
+    },
+    {
+      "id": "bp-lupapaatos",
+      "type": "BusinessProcess",
+      "label": "Myönnä lupa",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.2",
+        "rationale": "After ORK approval, Ulosottolaitos decides on and grants the licence."
+      }
+    },
+    {
+      "id": "bp-tuotanto",
+      "type": "BusinessProcess",
+      "label": "Valmistele tuotantokäyttö",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.2",
+        "rationale": "ORK prepares the applicant credentials for production and notifies the applicant."
+      }
+    },
+    {
+      "id": "con-lupa",
+      "type": "Contract",
+      "label": "Tietojärjestelmähakijan lupa",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.1",
+        "rationale": "The information-system-applicant licence authorising electronic filing."
+      }
+    },
+    {
+      "id": "con-liikennointi",
+      "type": "Contract",
+      "label": "Liikennöintisopimus",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Liikennointisopimus.txt",
+        "rationale": "Connectivity agreement governing the data-transfer connection and credentials."
+      }
+    },
+    {
+      "id": "bo-tunnus",
+      "type": "BusinessObject",
+      "label": "Hakijatunnus (SFTP-tunnus)",
+      "properties": {
+        "layer": "Business",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt §2",
+        "rationale": "Applicant identifier / SFTP account used for both testing and production."
+      }
+    },
+    {
+      "id": "bp-toimita-hakemus",
+      "type": "BusinessProcess",
+      "label": "Toimita hakemuserä",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.1",
+        "rationale": "Applicant files an enforcement application batch."
+      }
+    },
+    {
+      "id": "be-vireille",
+      "type": "BusinessEvent",
+      "label": "Asia tullut vireille",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.3",
+        "rationale": "Matter checks pass and the matter enters enforcement; a vireilletuloilmoitus with the assigned case number is sent."
+      }
+    },
+    {
+      "id": "bp-taytantoonpano",
+      "type": "BusinessProcess",
+      "label": "Täytäntöönpano ja perintä",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3",
+        "rationale": "Enforcement/collection of the matter after it becomes pending."
+      }
+    },
+    {
+      "id": "bp-muutokset",
+      "type": "BusinessProcess",
+      "label": "Ilmoita muutokset",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.4",
+        "rationale": "Applicant reports changes (cancellation, payment change, claim change) during collection."
+      }
+    },
+    {
+      "id": "bp-tilitys",
+      "type": "BusinessProcess",
+      "label": "Tilitä kertymät velkojalle",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.5",
+        "rationale": "Uljas remits collected funds and settlement itemisations to the creditor."
+      }
+    },
+    {
+      "id": "be-passiivi",
+      "type": "BusinessEvent",
+      "label": "Passiivirekisteröinti",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.1.4",
+        "rationale": "On a no-assets finding the claim is entered in the passive register (if requested)."
+      }
+    },
+    {
+      "id": "be-passiivi-loppu",
+      "type": "BusinessEvent",
+      "label": "Passiiviperinnän päättyminen",
+      "properties": {
+        "layer": "Business",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §3.1.4",
+        "rationale": "Passive registration ends (two years); a passiiviperinnän päättymisilmoitus is sent."
+      }
+    },
+    {
+      "id": "app-uljas",
+      "type": "ApplicationComponent",
+      "label": "Uljas-ulosottojärjestelmä",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "input/schemas/*, docs/text/Aineiston_siirto.txt",
+        "rationale": "Enforcement information system that produces/consumes the XML messages."
+      }
+    },
+    {
+      "id": "app-hakija-sys",
+      "type": "ApplicationComponent",
+      "label": "Hakijan tietojärjestelmä",
+      "properties": {
+        "layer": "Application",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Aineiston_siirto.txt §2",
+        "rationale": "Applicant's own system (or that of its technical intermediary) that generates and receives the XML messages."
+      }
+    },
+    {
+      "id": "if-sftp",
+      "type": "ApplicationInterface",
+      "label": "SFTP-sanomarajapinta",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt §2-3",
+        "rationale": "Access point where Uljas message exchange is offered: to_uljas (send) and from_uljas (fetch) SFTP directories."
+      }
+    },
+    {
+      "id": "asvc-vastaanotto",
+      "type": "ApplicationService",
+      "label": "Hakemus- ja muutosaineiston vastaanotto",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "input/schemas/hakemusera, input/schemas/muutosera",
+        "rationale": "Inbound service receiving application and change batches."
+      }
+    },
+    {
+      "id": "asvc-palaute",
+      "type": "ApplicationService",
+      "label": "Palautteet ja ilmoitukset",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "input/schemas/hakemuserapalaute, muutoserapalaute, vireilletuloilmoitukset",
+        "rationale": "Outbound service delivering batch feedback and pending notices."
+      }
+    },
+    {
+      "id": "asvc-tilitys",
+      "type": "ApplicationService",
+      "label": "Tilitysaineisto",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "input/schemas/tilitys",
+        "rationale": "Outbound service delivering settlement itemisations."
+      }
+    },
+    {
+      "id": "asvc-saldo",
+      "type": "ApplicationService",
+      "label": "Saldotiedustelut",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "input/schemas/saldotiedustelutiedot, saldotiedusteluvastaukset",
+        "rationale": "Balance-inquiry exchange used during passive collection."
+      }
+    },
+    {
+      "id": "asvc-maksukiellot",
+      "type": "ApplicationService",
+      "label": "Maksukiellot",
+      "properties": {
+        "layer": "Application",
+        "evidence": "source-backed",
+        "source": "input/schemas/maksukiellot, maksukiellon-palauttaminen, maksukiellon-palauttamisen-palaute",
+        "rationale": "Payment-prohibition orders and their return handling (in use from 2026)."
+      }
+    },
+    {
+      "id": "do-hakemusera",
+      "type": "DataObject",
+      "label": "Hakemuserä",
+      "properties": {
+        "layer": "Application",
+        "direction": "in",
+        "evidence": "source-backed",
+        "source": "input/schemas/hakemusera/hakemusera.xsd",
+        "identity": "msg.hakemusera",
+        "rationale": "Enforcement application batch (applicant → Uljas)."
+      }
+    },
+    {
+      "id": "do-hakemuserapalaute",
+      "type": "DataObject",
+      "label": "Hakemuseräpalaute",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/hakemuserapalaute/hakemuserapalaute.xsd",
+        "identity": "msg.hakemuserapalaute",
+        "rationale": "Application-batch feedback/acknowledgement (Uljas → applicant)."
+      }
+    },
+    {
+      "id": "do-muutosera",
+      "type": "DataObject",
+      "label": "Muutoserä",
+      "properties": {
+        "layer": "Application",
+        "direction": "in",
+        "evidence": "source-backed",
+        "source": "input/schemas/muutosera/muutosera.xsd",
+        "identity": "msg.muutosera",
+        "rationale": "Change batch amending existing matters (applicant → Uljas)."
+      }
+    },
+    {
+      "id": "do-muutoserapalaute",
+      "type": "DataObject",
+      "label": "Muutoseräpalaute",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/muutoserapalaute/muutoserapalaute.xsd",
+        "identity": "msg.muutoserapalaute",
+        "rationale": "Change-batch feedback (Uljas → applicant)."
+      }
+    },
+    {
+      "id": "do-saldotiedustelu",
+      "type": "DataObject",
+      "label": "Saldotiedustelu",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/saldotiedustelutiedot/saldotiedustelutiedot.xsd",
+        "identity": "msg.saldotiedustelu",
+        "rationale": "Balance/status inquiry (Uljas → applicant) during passive collection."
+      }
+    },
+    {
+      "id": "do-saldovastaus",
+      "type": "DataObject",
+      "label": "Saldotiedusteluvastaus",
+      "properties": {
+        "layer": "Application",
+        "direction": "in",
+        "evidence": "source-backed",
+        "source": "input/schemas/saldotiedusteluvastaukset/saldotiedusteluvastaukset.xsd",
+        "identity": "msg.saldotiedusteluvastaus",
+        "rationale": "Balance-inquiry response (applicant → Uljas) when balances are unchanged."
+      }
+    },
+    {
+      "id": "do-vireilletulo",
+      "type": "DataObject",
+      "label": "Vireilletuloilmoitus",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/vireilletuloilmoitukset/ulosottoasiat.xsd",
+        "identity": "msg.vireilletulo",
+        "rationale": "Notice that a matter became pending, with the assigned case number (Uljas → applicant)."
+      }
+    },
+    {
+      "id": "do-tilitys",
+      "type": "DataObject",
+      "label": "Tilityserittely",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/tilitys/Tilitys.xsd",
+        "identity": "msg.tilitys",
+        "rationale": "Settlement / remittance itemisation (Uljas → applicant)."
+      }
+    },
+    {
+      "id": "do-maksukiellot",
+      "type": "DataObject",
+      "label": "Maksukiellot",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/maksukiellot/maksukiellot.xsd",
+        "identity": "msg.maksukiellot",
+        "rationale": "Payment-prohibition orders (Uljas → payment-prohibition recipient)."
+      }
+    },
+    {
+      "id": "do-mk-palauttaminen",
+      "type": "DataObject",
+      "label": "Maksukiellon palauttaminen",
+      "properties": {
+        "layer": "Application",
+        "direction": "in",
+        "evidence": "source-backed",
+        "source": "input/schemas/maksukiellon-palauttaminen/maksukiellonpalauttaminen.xsd",
+        "identity": "msg.maksukiellonpalauttaminen",
+        "rationale": "Return of a payment prohibition (recipient → Uljas), in use from 2026."
+      }
+    },
+    {
+      "id": "do-mk-palaute",
+      "type": "DataObject",
+      "label": "Maksukiellon palauttamisen palaute",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/maksukiellon-palauttamisen-palaute/maksukiellonpalauttamisenpalaute.xsd",
+        "identity": "msg.maksukiellonpalauttamisenpalaute",
+        "rationale": "Feedback on a payment-prohibition return (Uljas → recipient)."
+      }
+    },
+    {
+      "id": "do-passiivi",
+      "type": "DataObject",
+      "label": "Passiiviperinnän päättymisilmoitus",
+      "properties": {
+        "layer": "Application",
+        "direction": "out",
+        "evidence": "source-backed",
+        "source": "input/schemas/passiiviperinnan-paattymisilmoitukset/passiiviperinnanPaattymisilmoitukset.xsd",
+        "identity": "msg.passiiviperinta",
+        "rationale": "Passive-collection termination notice (Uljas → applicant)."
+      }
+    },
+    {
+      "id": "node-hakija-host",
+      "type": "Node",
+      "label": "Hakijan ympäristö",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Aineiston_siirto.txt §2",
+        "rationale": "Applicant/intermediary environment that runs the SFTP client."
+      }
+    },
+    {
+      "id": "node-via",
+      "type": "Node",
+      "label": "VIA-integraatioalusta (välityspalvelu)",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt §2-3; Ulosoton-hakeminen §1",
+        "rationale": "Valtori-operated integration platform / relay service between applicant and Uljas."
+      }
+    },
+    {
+      "id": "node-uljas-host",
+      "type": "Node",
+      "label": "Uljas-järjestelmäympäristö (ORK)",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Ulosoton-hakeminen-tietojarjestelmahakijana.txt §2.2",
+        "rationale": "ORK-operated environment hosting the Uljas enforcement system."
+      }
+    },
+    {
+      "id": "ss-sftp",
+      "type": "SystemSoftware",
+      "label": "SFTP-palvelu",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt §2-3",
+        "rationale": "SFTP server on the relay exposing the to_uljas / from_uljas directories."
+      }
+    },
+    {
+      "id": "art-to-uljas",
+      "type": "Artifact",
+      "label": "to_uljas (lähtevä hakemisto)",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt §2",
+        "rationale": "Upload directory under the applicant's SFTP root; relay forwards then deletes files."
+      }
+    },
+    {
+      "id": "art-from-uljas",
+      "type": "Artifact",
+      "label": "from_uljas (noudettava hakemisto)",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt §3",
+        "rationale": "Download directory; applicant deletes after fetch, relay purges files older than 14 days."
+      }
+    },
+    {
+      "id": "tsvc-transfer",
+      "type": "TechnologyService",
+      "label": "Tiedonsiirtopalvelu (SFTP)",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "source-backed",
+        "source": "docs/text/Aineiston_siirto.txt",
+        "rationale": "File-transfer service realised by the SFTP server; UTF-8 XML, standardised file naming."
+      }
+    },
+    {
+      "id": "path-sftp",
+      "type": "Path",
+      "label": "SFTP-yhteys",
+      "properties": {
+        "layer": "Technology",
+        "evidence": "candidate-from-source",
+        "source": "docs/text/Liikennointisopimus.txt",
+        "rationale": "Connectivity-agreement transfer connection between applicant environment and the relay."
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r-actor-hakija",
+      "type": "Assignment",
+      "source": "br-asiamies",
+      "target": "br-hakija",
+      "label": "voi toimia",
+      "properties": {}
+    },
+    {
+      "id": "r-hakija-does-lupahaku",
+      "type": "Assignment",
+      "source": "br-hakija",
+      "target": "bp-lupa-haku",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ulosotto-luonnos",
+      "type": "Assignment",
+      "source": "ba-ulosotto",
+      "target": "bp-lupaluonnos",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-hakija-lomakkeet",
+      "type": "Assignment",
+      "source": "br-hakija",
+      "target": "bp-toimita-lomakkeet",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ork-testaus",
+      "type": "Assignment",
+      "source": "ba-ork",
+      "target": "bp-yhteistestaus",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ulosotto-paatos",
+      "type": "Assignment",
+      "source": "ba-ulosotto",
+      "target": "bp-lupapaatos",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ork-tuotanto",
+      "type": "Assignment",
+      "source": "ba-ork",
+      "target": "bp-tuotanto",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-trig-haku-luonnos",
+      "type": "Triggering",
+      "source": "bp-lupa-haku",
+      "target": "bp-lupaluonnos",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-trig-luonnos-lomakkeet",
+      "type": "Triggering",
+      "source": "bp-lupaluonnos",
+      "target": "bp-toimita-lomakkeet",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-trig-lomakkeet-testaus",
+      "type": "Triggering",
+      "source": "bp-toimita-lomakkeet",
+      "target": "bp-yhteistestaus",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-trig-testaus-paatos",
+      "type": "Triggering",
+      "source": "bp-yhteistestaus",
+      "target": "bp-lupapaatos",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-trig-paatos-tuotanto",
+      "type": "Triggering",
+      "source": "bp-lupapaatos",
+      "target": "bp-tuotanto",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-paatos-lupa",
+      "type": "Access",
+      "source": "bp-lupapaatos",
+      "target": "con-lupa",
+      "label": "myöntää",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-lomakkeet-liikennointi",
+      "type": "Access",
+      "source": "bp-toimita-lomakkeet",
+      "target": "con-liikennointi",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-tuotanto-tunnus",
+      "type": "Access",
+      "source": "bp-tuotanto",
+      "target": "bo-tunnus",
+      "label": "aktivoi",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-tuotanto-realizes-tjhaku",
+      "type": "Realization",
+      "source": "bp-tuotanto",
+      "target": "bsvc-tjhaku",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-tjhaku-serves-hakija",
+      "type": "Serving",
+      "source": "bsvc-tjhaku",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ulosotto-realizes-ulosottopalvelu",
+      "type": "Realization",
+      "source": "ba-ulosotto",
+      "target": "bsvc-ulosotto",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ulosottopalvelu-serves-hakija",
+      "type": "Serving",
+      "source": "bsvc-ulosotto",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-uljas-realizes-vastaanotto",
+      "type": "Realization",
+      "source": "app-uljas",
+      "target": "asvc-vastaanotto",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-uljas-realizes-palaute",
+      "type": "Realization",
+      "source": "app-uljas",
+      "target": "asvc-palaute",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-uljas-realizes-tilitys",
+      "type": "Realization",
+      "source": "app-uljas",
+      "target": "asvc-tilitys",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-uljas-realizes-saldo",
+      "type": "Realization",
+      "source": "app-uljas",
+      "target": "asvc-saldo",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-uljas-realizes-maksukiellot",
+      "type": "Realization",
+      "source": "app-uljas",
+      "target": "asvc-maksukiellot",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-uljas-provides-if",
+      "type": "Composition",
+      "source": "app-uljas",
+      "target": "if-sftp",
+      "label": "tarjoaa",
+      "properties": {}
+    },
+    {
+      "id": "r-if-serves-hakijasys",
+      "type": "Serving",
+      "source": "if-sftp",
+      "target": "app-hakija-sys",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-vastaanotto-serves-hakija",
+      "type": "Serving",
+      "source": "asvc-vastaanotto",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-palaute-serves-hakija",
+      "type": "Serving",
+      "source": "asvc-palaute",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-tilitys-serves-hakija",
+      "type": "Serving",
+      "source": "asvc-tilitys",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-saldo-serves-hakija",
+      "type": "Serving",
+      "source": "asvc-saldo",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-maksukiellot-serves-hakija",
+      "type": "Serving",
+      "source": "asvc-maksukiellot",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-hakijasys-serves-hakija",
+      "type": "Serving",
+      "source": "app-hakija-sys",
+      "target": "br-hakija",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-flow-out",
+      "type": "Flow",
+      "source": "app-hakija-sys",
+      "target": "app-uljas",
+      "label": "hakemus-/muutosaineisto",
+      "properties": {}
+    },
+    {
+      "id": "r-flow-in",
+      "type": "Flow",
+      "source": "app-uljas",
+      "target": "app-hakija-sys",
+      "label": "palautteet, tilitykset, ilmoitukset",
+      "properties": {}
+    },
+    {
+      "id": "r-vastaanotto-acc-hakemusera",
+      "type": "Access",
+      "source": "asvc-vastaanotto",
+      "target": "do-hakemusera",
+      "label": "",
+      "properties": {
+        "accessType": "Read"
+      }
+    },
+    {
+      "id": "r-vastaanotto-acc-muutosera",
+      "type": "Access",
+      "source": "asvc-vastaanotto",
+      "target": "do-muutosera",
+      "label": "",
+      "properties": {
+        "accessType": "Read"
+      }
+    },
+    {
+      "id": "r-palaute-acc-hakemuserapalaute",
+      "type": "Access",
+      "source": "asvc-palaute",
+      "target": "do-hakemuserapalaute",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-palaute-acc-muutoserapalaute",
+      "type": "Access",
+      "source": "asvc-palaute",
+      "target": "do-muutoserapalaute",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-palaute-acc-vireilletulo",
+      "type": "Access",
+      "source": "asvc-palaute",
+      "target": "do-vireilletulo",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-tilitys-acc-tilitys",
+      "type": "Access",
+      "source": "asvc-tilitys",
+      "target": "do-tilitys",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-tilitys-acc-passiivi",
+      "type": "Access",
+      "source": "asvc-tilitys",
+      "target": "do-passiivi",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-saldo-acc-tiedustelu",
+      "type": "Access",
+      "source": "asvc-saldo",
+      "target": "do-saldotiedustelu",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-saldo-acc-vastaus",
+      "type": "Access",
+      "source": "asvc-saldo",
+      "target": "do-saldovastaus",
+      "label": "",
+      "properties": {
+        "accessType": "Read"
+      }
+    },
+    {
+      "id": "r-mk-acc-maksukiellot",
+      "type": "Access",
+      "source": "asvc-maksukiellot",
+      "target": "do-maksukiellot",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-mk-acc-palauttaminen",
+      "type": "Access",
+      "source": "asvc-maksukiellot",
+      "target": "do-mk-palauttaminen",
+      "label": "",
+      "properties": {
+        "accessType": "Read"
+      }
+    },
+    {
+      "id": "r-mk-acc-palaute",
+      "type": "Access",
+      "source": "asvc-maksukiellot",
+      "target": "do-mk-palaute",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-pair-hakemus",
+      "type": "Association",
+      "source": "do-hakemusera",
+      "target": "do-hakemuserapalaute",
+      "label": "kuittaa",
+      "properties": {}
+    },
+    {
+      "id": "r-pair-hakemus-vireille",
+      "type": "Association",
+      "source": "do-hakemuserapalaute",
+      "target": "do-vireilletulo",
+      "label": "johtaa (vireilletulo)",
+      "properties": {}
+    },
+    {
+      "id": "r-pair-muutos",
+      "type": "Association",
+      "source": "do-muutosera",
+      "target": "do-muutoserapalaute",
+      "label": "kuittaa",
+      "properties": {}
+    },
+    {
+      "id": "r-pair-saldo",
+      "type": "Association",
+      "source": "do-saldotiedustelu",
+      "target": "do-saldovastaus",
+      "label": "vastaus",
+      "properties": {}
+    },
+    {
+      "id": "r-pair-mk",
+      "type": "Association",
+      "source": "do-mk-palauttaminen",
+      "target": "do-mk-palaute",
+      "label": "kuittaa",
+      "properties": {}
+    },
+    {
+      "id": "r-hakemus-trig-vireille",
+      "type": "Triggering",
+      "source": "bp-toimita-hakemus",
+      "target": "be-vireille",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-vireille-trig-taytantoonpano",
+      "type": "Triggering",
+      "source": "be-vireille",
+      "target": "bp-taytantoonpano",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-muutokset-serves-taytantoonpano",
+      "type": "Serving",
+      "source": "bp-muutokset",
+      "target": "bp-taytantoonpano",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-taytantoonpano-trig-tilitys",
+      "type": "Triggering",
+      "source": "bp-taytantoonpano",
+      "target": "bp-tilitys",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-taytantoonpano-trig-passiivi",
+      "type": "Triggering",
+      "source": "bp-taytantoonpano",
+      "target": "be-passiivi",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-passiivi-trig-loppu",
+      "type": "Triggering",
+      "source": "be-passiivi",
+      "target": "be-passiivi-loppu",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-hakemus-acc-do",
+      "type": "Access",
+      "source": "bp-toimita-hakemus",
+      "target": "do-hakemusera",
+      "label": "tuottaa",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-vireille-acc-do",
+      "type": "Access",
+      "source": "be-vireille",
+      "target": "do-vireilletulo",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-tilitys-acc-do",
+      "type": "Access",
+      "source": "bp-tilitys",
+      "target": "do-tilitys",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-muutokset-acc-do",
+      "type": "Access",
+      "source": "bp-muutokset",
+      "target": "do-muutosera",
+      "label": "tuottaa",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-passiivi-loppu-acc-do",
+      "type": "Access",
+      "source": "be-passiivi-loppu",
+      "target": "do-passiivi",
+      "label": "",
+      "properties": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "id": "r-tilitys-realizes-bsvc",
+      "type": "Realization",
+      "source": "asvc-tilitys",
+      "target": "bp-tilitys",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-host-hakija-app",
+      "type": "Assignment",
+      "source": "node-hakija-host",
+      "target": "app-hakija-sys",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-host-uljas-app",
+      "type": "Assignment",
+      "source": "node-uljas-host",
+      "target": "app-uljas",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-via-ss",
+      "type": "Assignment",
+      "source": "node-via",
+      "target": "ss-sftp",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-ss-realizes-transfer",
+      "type": "Realization",
+      "source": "ss-sftp",
+      "target": "tsvc-transfer",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-via-to",
+      "type": "Assignment",
+      "source": "node-via",
+      "target": "art-to-uljas",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-via-from",
+      "type": "Assignment",
+      "source": "node-via",
+      "target": "art-from-uljas",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-transfer-serves-hakijahost",
+      "type": "Serving",
+      "source": "tsvc-transfer",
+      "target": "node-hakija-host",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-transfer-serves-uljashost",
+      "type": "Serving",
+      "source": "tsvc-transfer",
+      "target": "node-uljas-host",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-path-hakija-via",
+      "type": "Association",
+      "source": "node-hakija-host",
+      "target": "path-sftp",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-path-via",
+      "type": "Association",
+      "source": "path-sftp",
+      "target": "node-via",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "r-via-serves-uljashost",
+      "type": "Serving",
+      "source": "node-via",
+      "target": "node-uljas-host",
+      "label": "välittää aineiston",
+      "properties": {}
+    }
+  ],
+  "plugins": {
+    "generic-graph": {
+      "semantic_profile": "archimate",
+      "views": [
+        {
+          "id": "context",
+          "label": "Uljas — järjestelmäkonteksti",
+          "nodes": [
+            "br-hakija",
+            "br-asiamies",
+            "br-valittaja",
+            "app-hakija-sys",
+            "if-sftp",
+            "app-uljas",
+            "node-via",
+            "ba-ork",
+            "asvc-vastaanotto",
+            "asvc-palaute"
+          ],
+          "relationships": [
+            "r-actor-hakija",
+            "r-uljas-provides-if",
+            "r-if-serves-hakijasys",
+            "r-hakijasys-serves-hakija",
+            "r-flow-out",
+            "r-flow-in",
+            "r-uljas-realizes-vastaanotto",
+            "r-uljas-realizes-palaute",
+            "r-vastaanotto-serves-hakija",
+            "r-palaute-serves-hakija"
+          ],
+          "groups": [
+            {
+              "id": "g-ctx-applicant",
+              "label": "Hakijan puoli",
+              "role": "layout-only",
+              "members": [
+                "br-hakija",
+                "br-asiamies",
+                "br-valittaja",
+                "app-hakija-sys"
+              ]
+            },
+            {
+              "id": "g-ctx-authority",
+              "label": "Ulosottolaitos / ORK",
+              "role": "layout-only",
+              "members": [
+                "app-uljas",
+                "if-sftp",
+                "asvc-vastaanotto",
+                "asvc-palaute",
+                "ba-ork"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "onboarding",
+          "label": "Tietojärjestelmähakijaksi liittyminen",
+          "nodes": [
+            "br-hakija",
+            "ba-ulosotto",
+            "ba-ork",
+            "bp-lupa-haku",
+            "bp-lupaluonnos",
+            "bp-toimita-lomakkeet",
+            "bp-yhteistestaus",
+            "bp-lupapaatos",
+            "bp-tuotanto",
+            "con-lupa",
+            "con-liikennointi",
+            "bo-tunnus",
+            "bsvc-tjhaku"
+          ],
+          "relationships": [
+            "r-hakija-does-lupahaku",
+            "r-ulosotto-luonnos",
+            "r-hakija-lomakkeet",
+            "r-ork-testaus",
+            "r-ulosotto-paatos",
+            "r-ork-tuotanto",
+            "r-trig-haku-luonnos",
+            "r-trig-luonnos-lomakkeet",
+            "r-trig-lomakkeet-testaus",
+            "r-trig-testaus-paatos",
+            "r-trig-paatos-tuotanto",
+            "r-paatos-lupa",
+            "r-lomakkeet-liikennointi",
+            "r-tuotanto-tunnus",
+            "r-tuotanto-realizes-tjhaku",
+            "r-tjhaku-serves-hakija"
+          ],
+          "groups": []
+        },
+        {
+          "id": "message-catalog",
+          "label": "Sanomaluettelo (in/out)",
+          "nodes": [
+            "do-hakemusera",
+            "do-hakemuserapalaute",
+            "do-vireilletulo",
+            "do-muutosera",
+            "do-muutoserapalaute",
+            "do-saldotiedustelu",
+            "do-saldovastaus",
+            "do-tilitys",
+            "do-passiivi",
+            "do-maksukiellot",
+            "do-mk-palauttaminen",
+            "do-mk-palaute"
+          ],
+          "relationships": [
+            "r-pair-hakemus",
+            "r-pair-hakemus-vireille",
+            "r-pair-muutos",
+            "r-pair-saldo",
+            "r-pair-mk"
+          ],
+          "groups": [
+            {
+              "id": "g-in",
+              "label": "Sisään (hakija → Uljas)",
+              "role": "layout-only",
+              "members": [
+                "do-hakemusera",
+                "do-muutosera",
+                "do-saldovastaus",
+                "do-mk-palauttaminen"
+              ]
+            },
+            {
+              "id": "g-out",
+              "label": "Ulos (Uljas → hakija)",
+              "role": "layout-only",
+              "members": [
+                "do-hakemuserapalaute",
+                "do-vireilletulo",
+                "do-muutoserapalaute",
+                "do-saldotiedustelu",
+                "do-tilitys",
+                "do-passiivi",
+                "do-maksukiellot",
+                "do-mk-palaute"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "matter-lifecycle",
+          "label": "Ulosottoasian elinkaari",
+          "nodes": [
+            "bp-toimita-hakemus",
+            "be-vireille",
+            "bp-taytantoonpano",
+            "bp-muutokset",
+            "bp-tilitys",
+            "be-passiivi",
+            "be-passiivi-loppu",
+            "do-hakemusera",
+            "do-vireilletulo",
+            "do-muutosera",
+            "do-tilitys",
+            "do-passiivi"
+          ],
+          "relationships": [
+            "r-hakemus-trig-vireille",
+            "r-vireille-trig-taytantoonpano",
+            "r-muutokset-serves-taytantoonpano",
+            "r-taytantoonpano-trig-tilitys",
+            "r-taytantoonpano-trig-passiivi",
+            "r-passiivi-trig-loppu",
+            "r-hakemus-acc-do",
+            "r-vireille-acc-do",
+            "r-tilitys-acc-do",
+            "r-muutokset-acc-do",
+            "r-passiivi-loppu-acc-do"
+          ],
+          "groups": []
+        },
+        {
+          "id": "deployment",
+          "label": "Tiedonsiirto (SFTP-välityspalvelu)",
+          "nodes": [
+            "node-hakija-host",
+            "app-hakija-sys",
+            "path-sftp",
+            "node-via",
+            "ss-sftp",
+            "tsvc-transfer",
+            "art-to-uljas",
+            "art-from-uljas",
+            "node-uljas-host",
+            "app-uljas"
+          ],
+          "relationships": [
+            "r-host-hakija-app",
+            "r-host-uljas-app",
+            "r-via-ss",
+            "r-ss-realizes-transfer",
+            "r-via-to",
+            "r-via-from",
+            "r-transfer-serves-hakijahost",
+            "r-transfer-serves-uljashost",
+            "r-path-hakija-via",
+            "r-path-via",
+            "r-via-serves-uljashost"
+          ],
+          "groups": [
+            {
+              "id": "g-relay",
+              "label": "Välityspalvelu (VIA / Valtori)",
+              "role": "layout-only",
+              "members": [
+                "node-via",
+                "ss-sftp",
+                "tsvc-transfer",
+                "art-to-uljas",
+                "art-from-uljas"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

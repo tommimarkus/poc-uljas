@@ -1,0 +1,6 @@
+# Dediren-generated intermediates are reproducible from package source
+# (project.json + model*.json + render-policy*.json). Regenerate with the
+# pipeline in README.md. SVGs under generated/svg/ are kept as visual proof.
+generated/_layout-request/
+generated/layout/
+generated/render-metadata/

@@ -1,0 +1,6 @@
+# Source documents fetched from the National Enforcement Authority (Ulosottolaitos).
+# These are Ulosottolaitos's copyrighted material — kept locally for development use
+# only and MUST NOT be committed or redistributed. Re-fetch from ulosottolaitos.fi
+# as described in input/README.md.
+input/
+/.mcp.json
