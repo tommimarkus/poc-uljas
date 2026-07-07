@@ -299,6 +299,24 @@ q('#zout').onclick = () => setZoom(zoom - 25);
 q('#zfit').onclick = () => setZoom(100);
 addEventListener('resize', applyZoom);  // keep "fit" honest when the window changes
 
+// Ctrl/⌘ + wheel (and trackpad pinch, which reports ctrlKey) zooms toward the pointer;
+// plain wheel scrolls the viewer as before. Registered non-passive so the browser's own
+// ctrl-wheel page zoom can be cancelled — but preventDefault fires only on the zoom path.
+viewer.addEventListener('wheel', e => {
+  if (!e.ctrlKey && !e.metaKey) return;
+  e.preventDefault();
+  const s = q('#plate-host svg'); if (!s) return;
+  let dy = e.deltaY;                                    // normalise line/page deltas to ~pixels
+  if (e.deltaMode === 1) dy *= 16; else if (e.deltaMode === 2) dy *= viewer.clientHeight;
+  const before = s.getBoundingClientRect();
+  const fx = (e.clientX - before.left) / before.width; // pointer as a fraction of the SVG box
+  const fy = (e.clientY - before.top)  / before.height;
+  setZoom(zoom * Math.exp(Math.max(-0.25, Math.min(0.25, -dy * 0.0015))));
+  const after = s.getBoundingClientRect();              // keep that SVG point under the pointer
+  viewer.scrollLeft += after.left + fx * after.width  - e.clientX;
+  viewer.scrollTop  += after.top  + fy * after.height - e.clientY;
+}, {passive:false});
+
 q('#register').addEventListener('keydown', e => {
   if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
   e.preventDefault();
