@@ -60,29 +60,9 @@ collapsed away. The shared `uljasComplexTypes` bases (`asiaTypeV0`,
 self-describing; `data-ct` additionally draws each complex member as a composition
 (◆) to its own child-type box.
 
-## Regenerate
+## Known findings
 
-Requires Java 21+ and the dediren bundle (`2026.07.9`). From the repo root:
-
-```bash
-export DEDIREN_CACHE_DIR=<dir-with>/dediren-agent-bundle-2026.07.9/..  DEDIREN_VERSION=2026.07.9
-export DEDIREN_CDS_DIR=<writable>/cds
-DEDIREN=<bundle>/bin/dediren
-PKG=docs/architecture/uljas.dediren
-
-# JAVA_HOME: any JDK 21+. Finnish ä/ö render correctly with the stock JDK as of
-# bundle 2026.07.8 — the plugin launchers now force UTF-8 themselves, so the
-# earlier wrapper-JDK workaround is no longer needed.
-export JAVA_HOME=<java-21-jdk>
-
-# per view (see project.json): profile-validate, then
-"$DEDIREN" validate --plugin generic-graph --profile archimate --input "$PKG/model.json"
-"$DEDIREN" validate --plugin generic-graph --profile uml       --input "$PKG/model-uml.json"
-# then project (layout-request + render-metadata) → layout → validate-layout → render,
-# and the skill's svg-accessible-name.sh post-render step per view.
-```
-
-Known finding: `data-ti` (Tilityserittely, 45 classes / 92 edges) is the largest
+`data-ti` (Tilityserittely, 45 classes / 92 edges) is the largest
 schema and renders dense (`ARCH-L-3`: residual route detours + label
 dissociation after layout tuning). It is kept as a complete reference view;
 recommended remediation is to split it into `lähete` (settlement summary) and the
