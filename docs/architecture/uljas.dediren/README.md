@@ -70,13 +70,10 @@ export DEDIREN_CDS_DIR=<writable>/cds
 DEDIREN=<bundle>/bin/dediren
 PKG=docs/architecture/uljas.dediren
 
-# IMPORTANT (UTF-8): dediren plugin children only inherit JAVA_HOME/PATH, so a
-# non-UTF-8 locale makes them emit '?' for ä/ö. Point JAVA_HOME at a wrapper JDK
-# whose bin/java forces UTF-8, e.g.:
-#   mkdir -p /tmp/jdk-utf8/bin
-#   printf '#!/bin/sh\nexec <real-jdk>/bin/java -Dstdout.encoding=UTF-8 -Dfile.encoding=UTF-8 "$@"\n' > /tmp/jdk-utf8/bin/java
-#   chmod +x /tmp/jdk-utf8/bin/java
-export JAVA_HOME=/tmp/jdk-utf8
+# JAVA_HOME: any JDK 21+. Finnish ä/ö render correctly with the stock JDK as of
+# bundle 2026.07.8 — the plugin launchers now force UTF-8 themselves, so the
+# earlier wrapper-JDK workaround is no longer needed.
+export JAVA_HOME=<java-21-jdk>
 
 # per view (see project.json): profile-validate, then
 "$DEDIREN" validate --plugin generic-graph --profile archimate --input "$PKG/model.json"
@@ -84,11 +81,6 @@ export JAVA_HOME=/tmp/jdk-utf8
 # then project (layout-request + render-metadata) → layout → validate-layout → render,
 # and the skill's svg-accessible-name.sh post-render step per view.
 ```
-
-Known dediren tool issue: plugin children inherit only `JAVA_HOME`/`PATH`, so a
-non-UTF-8 child locale makes them emit `?` for `ä`/`ö` in all output (incl. SVG)
-while the pipeline reports `ok`. Full write-up + minimal repro:
-[`DEDIREN-ISSUE-utf8-stdout.md`](DEDIREN-ISSUE-utf8-stdout.md). Workaround above.
 
 Known finding: `data-ti` (Tilityserittely, 45 classes / 92 edges) is the largest
 schema and renders dense (`ARCH-L-3`: residual route detours + label
