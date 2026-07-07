@@ -62,10 +62,10 @@ self-describing; `data-ct` additionally draws each complex member as a compositi
 
 ## Regenerate
 
-Requires Java 21+ and the dediren bundle (`2026.07.8`). From the repo root:
+Requires Java 21+ and the dediren bundle (`2026.07.9`). From the repo root:
 
 ```bash
-export DEDIREN_CACHE_DIR=<dir-with>/dediren-agent-bundle-2026.07.8/..  DEDIREN_VERSION=2026.07.8
+export DEDIREN_CACHE_DIR=<dir-with>/dediren-agent-bundle-2026.07.9/..  DEDIREN_VERSION=2026.07.9
 export DEDIREN_CDS_DIR=<writable>/cds
 DEDIREN=<bundle>/bin/dediren
 PKG=docs/architecture/uljas.dediren
