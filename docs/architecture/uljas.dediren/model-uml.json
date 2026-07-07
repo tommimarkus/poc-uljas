@@ -10857,7 +10857,6 @@
           "label": "Uljas Datatypes — tietomalli",
           "kind": "uml-data",
           "nodes": [
-            "pkg-dt",
             "dt__legacyDateType",
             "dt__europeDateType",
             "dt__isoDateType",
@@ -10968,7 +10967,6 @@
           "label": "Uljas Complex Types — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-ct",
             "ct__asiaTiedotTypeV0",
             "ct__asianHakijanViitetiedotTypeV0",
             "ct__taytantoonpanonPerusteTypeV0",
@@ -11051,7 +11049,6 @@
           "label": "Hakemuserä — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-he",
             "he__kuukausiElatusType",
             "he__hennimiType",
             "he__osoiteType",
@@ -11136,7 +11133,6 @@
           "label": "Hakemuseräpalaute — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-hep",
             "hep__hakemuserapalaute",
             "hep__hakemusera",
             "hep__huomautus",
@@ -11167,7 +11163,6 @@
           "label": "Muutoserä — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-me",
             "me__kuukausiElatusType",
             "me__muutosera",
             "me__sahkoinenHakija",
@@ -11253,7 +11248,6 @@
           "label": "Muutoseräpalaute — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-mep",
             "mep__muutoserapalaute",
             "mep__muutosera",
             "mep__huomautus",
@@ -11284,7 +11278,6 @@
           "label": "Vireilletuloilmoitus (ulosottoasiat) — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-vt",
             "vt__hennimiType",
             "vt__osoiteType",
             "vt__organisaatioType",
@@ -11370,7 +11363,6 @@
           "label": "Saldotiedustelu — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-st",
             "st__saldotiedustelutiedot",
             "st__asianVelallinen-2",
             "st__asia-1",
@@ -11408,7 +11400,6 @@
           "label": "Saldotiedusteluvastaus — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-stv",
             "stv__saldotiedusteluvastaukset",
             "stv__sahkoinenHakija",
             "stv__saldotiedusteluvastaus"
@@ -11436,7 +11427,6 @@
           "label": "Tilityserittely — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-ti",
             "ti__osoiteType",
             "ti__hennimiType",
             "ti__tunnusType",
@@ -11647,7 +11637,6 @@
           "label": "Maksukiellot — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-mk",
             "mk__suojaOsuus-1",
             "mk__ulosmittauksenRajoitus-2",
             "mk__maksukieltoTaiMuutos",
@@ -11700,7 +11689,6 @@
           "label": "Maksukiellon palauttaminen — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-mkp",
             "mkp__EiEnaaPalveluksessaTiedot",
             "mkp__VelallisenPalkkaEiYliSuojaosuudenTiedot",
             "mkp__MuuSyyTiedot",
@@ -11744,7 +11732,6 @@
           "label": "Maksukiellon palauttamisen palaute — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-mkpp",
             "mkpp__maksukiellonPalauttamisenPalaute",
             "mkpp__maksukiellonPalaute"
           ],
@@ -11769,7 +11756,6 @@
           "label": "Passiiviperinnän päättymisilmoitus — tietomalli",
           "kind": "uml-class",
           "nodes": [
-            "pkg-pp",
             "pp__asia-1",
             "pp__passiiviperinnanPaattymisilmoitukset",
             "ct__asiaTypeV0",
