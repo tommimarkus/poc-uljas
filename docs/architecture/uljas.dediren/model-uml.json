@@ -1742,1124 +1742,6 @@
       }
     },
     {
-      "id": "pkg-co",
-      "type": "Package",
-      "label": "Uljas Codes",
-      "properties": {
-        "uml": {
-          "kind": "package"
-        },
-        "source": "input/schemas/common/uljasCodes/uljasCodes.xsd",
-        "evidence": "source-backed"
-      }
-    },
-    {
-      "id": "co__asianMaksunTyyppiCode",
-      "type": "Enumeration",
-      "label": "asianMaksunTyyppiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__asianMuutoskirjauksenLaatuCode",
-      "type": "Enumeration",
-      "label": "asianMuutoskirjauksenLaatuCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "13",
-            "… (+20 of 28)"
-          ]
-        },
-        "rationale": "code list, 28 values"
-      }
-    },
-    {
-      "id": "co__asianMuutoskirjauksenLajiCode",
-      "type": "Enumeration",
-      "label": "asianMuutoskirjauksenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "7"
-          ]
-        },
-        "rationale": "code list, 4 values"
-      }
-    },
-    {
-      "id": "co__asianToimenpideCode",
-      "type": "Enumeration",
-      "label": "asianToimenpideCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "6"
-          ]
-        },
-        "rationale": "code list, 1 values"
-      }
-    },
-    {
-      "id": "co__asianimiCode",
-      "type": "Enumeration",
-      "label": "asianimiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+132 of 140)"
-          ]
-        },
-        "rationale": "code list, 140 values"
-      }
-    },
-    {
-      "id": "co__esteenLajiCode",
-      "type": "Enumeration",
-      "label": "esteenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
-          ]
-        },
-        "rationale": "code list, 5 values"
-      }
-    },
-    {
-      "id": "co__esteenSeliteMuuEsteCode",
-      "type": "Enumeration",
-      "label": "esteenSeliteMuuEsteCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-          ]
-        },
-        "rationale": "code list, 7 values"
-      }
-    },
-    {
-      "id": "co__esteenSelitteenLaatuCode",
-      "type": "Enumeration",
-      "label": "esteenSelitteenLaatuCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"
-          ]
-        },
-        "rationale": "code list, 6 values"
-      }
-    },
-    {
-      "id": "co__haadonToteutumistapaCode",
-      "type": "Enumeration",
-      "label": "haadonToteutumistapaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
-          ]
-        },
-        "rationale": "code list, 5 values"
-      }
-    },
-    {
-      "id": "co__korkolajiCode",
-      "type": "Enumeration",
-      "label": "korkolajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+23 of 31)"
-          ]
-        },
-        "rationale": "code list, 31 values"
-      }
-    },
-    {
-      "id": "co__koronMaaraytymistapaCode",
-      "type": "Enumeration",
-      "label": "koronMaaraytymistapaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-          ]
-        },
-        "rationale": "code list, 7 values"
-      }
-    },
-    {
-      "id": "co__maksunKertymistapaCode",
-      "type": "Enumeration",
-      "label": "maksunKertymistapaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+28 of 36)"
-          ]
-        },
-        "rationale": "code list, 36 values"
-      }
-    },
-    {
-      "id": "co__oikaisuselitteenLajiCode",
-      "type": "Enumeration",
-      "label": "oikaisuselitteenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__saatavanimiCode",
-      "type": "Enumeration",
-      "label": "saatavanimiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+17 of 25)"
-          ]
-        },
-        "rationale": "code list, 25 values"
-      }
-    },
-    {
-      "id": "co__tuomioistuinCode",
-      "type": "Enumeration",
-      "label": "tuomioistuinCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "100",
-            "… (+168 of 176)"
-          ]
-        },
-        "rationale": "code list, 176 values"
-      }
-    },
-    {
-      "id": "co__ulosotonMaksunLajiCode",
-      "type": "Enumeration",
-      "label": "ulosotonMaksunLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "3",
-            "6"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__ulosotonMaksunTarkenneCode",
-      "type": "Enumeration",
-      "label": "ulosotonMaksunTarkenneCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "10",
-            "11",
-            "12",
-            "… (+1 of 9)"
-          ]
-        },
-        "rationale": "code list, 9 values"
-      }
-    },
-    {
-      "id": "co__siirronsyyCode",
-      "type": "Enumeration",
-      "label": "siirronsyyCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4"
-          ]
-        },
-        "rationale": "code list, 4 values"
-      }
-    },
-    {
-      "id": "co__hakemuslajiCode",
-      "type": "Enumeration",
-      "label": "hakemuslajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"
-          ]
-        },
-        "rationale": "code list, 6 values"
-      }
-    },
-    {
-      "id": "co__maksumuutoksenLaatuCode",
-      "type": "Enumeration",
-      "label": "maksumuutoksenLaatuCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "4",
-            "5",
-            "6"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__peruutuksenLaatuCode",
-      "type": "Enumeration",
-      "label": "peruutuksenLaatuCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__saatavamuutoksenLaatuCode",
-      "type": "Enumeration",
-      "label": "saatavamuutoksenLaatuCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "7",
-            "37"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__saatavanOsuudenLajiCode",
-      "type": "Enumeration",
-      "label": "saatavanOsuudenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-          ]
-        },
-        "rationale": "code list, 7 values"
-      }
-    },
-    {
-      "id": "co__taytantoonpanotapaCode",
-      "type": "Enumeration",
-      "label": "taytantoonpanotapaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__viivastyskoronLajiCode",
-      "type": "Enumeration",
-      "label": "viivastyskoronLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+23 of 31)"
-          ]
-        },
-        "rationale": "code list, 31 values"
-      }
-    },
-    {
-      "id": "co__asianLiitetiedonLajiCode",
-      "type": "Enumeration",
-      "label": "asianLiitetiedonLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "5",
-            "6",
-            "11",
-            "12",
-            "15",
-            "… (+14 of 22)"
-          ]
-        },
-        "rationale": "code list, 22 values"
-      }
-    },
-    {
-      "id": "co__asianLisatiedonlajiCode",
-      "type": "Enumeration",
-      "label": "asianLisatiedonlajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "3",
-            "4",
-            "5",
-            "8",
-            "9",
-            "17",
-            "18",
-            "19",
-            "… (+23 of 31)"
-          ]
-        },
-        "rationale": "code list, 31 values"
-      }
-    },
-    {
-      "id": "co__henkilolajiCode",
-      "type": "Enumeration",
-      "label": "henkilolajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__henkilotyyppiCode",
-      "type": "Enumeration",
-      "label": "henkilotyyppiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+2 of 10)"
-          ]
-        },
-        "rationale": "code list, 10 values"
-      }
-    },
-    {
-      "id": "co__kieliCode",
-      "type": "Enumeration",
-      "label": "kieliCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__kuntaCode",
-      "type": "Enumeration",
-      "label": "kuntaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "4",
-            "5",
-            "6",
-            "9",
-            "10",
-            "15",
-            "16",
-            "17",
-            "… (+448 of 456)"
-          ]
-        },
-        "rationale": "code list, 456 values"
-      }
-    },
-    {
-      "id": "co__liitteenSaapumistapaCode",
-      "type": "Enumeration",
-      "label": "liitteenSaapumistapaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__maaCode",
-      "type": "Enumeration",
-      "label": "maaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "10",
-            "11",
-            "20",
-            "… (+247 of 255)"
-          ]
-        },
-        "rationale": "code list, 255 values"
-      }
-    },
-    {
-      "id": "co__kyllaEiCode",
-      "type": "Enumeration",
-      "label": "kyllaEiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__paatosLiitteenaCode",
-      "type": "Enumeration",
-      "label": "paatosLiitteenaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4"
-          ]
-        },
-        "rationale": "code list, 4 values"
-      }
-    },
-    {
-      "id": "co__sukupuoliCode",
-      "type": "Enumeration",
-      "label": "sukupuoliCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__tietolahdeCode",
-      "type": "Enumeration",
-      "label": "tietolahdeCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "6"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__taytantoonpanoperusteenMaaraaikaCode",
-      "type": "Enumeration",
-      "label": "taytantoonpanoperusteenMaaraaikaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__taytantoonpanotapaCode-2",
-      "type": "Enumeration",
-      "label": "täytäntöönpanotapaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__valtakirjanLajiCode",
-      "type": "Enumeration",
-      "label": "valtakirjanLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__valtuutuksenLaajuusCode",
-      "type": "Enumeration",
-      "label": "valtuutuksenLaajuusCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
-      "id": "co__valuuttaCode",
-      "type": "Enumeration",
-      "label": "valuuttaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+173 of 181)"
-          ]
-        },
-        "rationale": "code list, 181 values"
-      }
-    },
-    {
-      "id": "co__velallisenLisatiedonLajiCode",
-      "type": "Enumeration",
-      "label": "velallisenLisatiedonLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+7 of 15)"
-          ]
-        },
-        "rationale": "code list, 15 values"
-      }
-    },
-    {
-      "id": "co__velallistilityksenTyyppiCode",
-      "type": "Enumeration",
-      "label": "velallistilityksenTyyppiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__asianVelallisenTilaCode",
-      "type": "Enumeration",
-      "label": "asianVelallisenTilaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "4",
-            "5",
-            "6",
-            "8",
-            "9",
-            "10",
-            "11",
-            "… (+1 of 9)"
-          ]
-        },
-        "rationale": "code list, 9 values"
-      }
-    },
-    {
-      "id": "co__henkilonRooliCode",
-      "type": "Enumeration",
-      "label": "henkilonRooliCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
-          ]
-        },
-        "rationale": "code list, 8 values"
-      }
-    },
-    {
-      "id": "co__siirtoilmoituksenLajiCode",
-      "type": "Enumeration",
-      "label": "siirtoilmoituksenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__ulosmittauksenLajiCode",
-      "type": "Enumeration",
-      "label": "ulosmittauksenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+8 of 16)"
-          ]
-        },
-        "rationale": "code list, 16 values"
-      }
-    },
-    {
-      "id": "co__tunnistautumismenetelmaCode",
-      "type": "Enumeration",
-      "label": "tunnistautumismenetelmaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__maksukiellonPidatyksenLajiCode",
-      "type": "Enumeration",
-      "label": "maksukiellonPidatyksenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
-          ]
-        },
-        "rationale": "code list, 5 values"
-      }
-    },
-    {
-      "id": "co__maksukiellonVoimassaolonLajiCode",
-      "type": "Enumeration",
-      "label": "maksukiellonVoimassaolonLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__maksukiellonPeruuttaminenCode",
-      "type": "Enumeration",
-      "label": "maksukiellonPeruuttaminenCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+1 of 9)"
-          ]
-        },
-        "rationale": "code list, 9 values"
-      }
-    },
-    {
-      "id": "co__velallisenToimenpideCode",
-      "type": "Enumeration",
-      "label": "velallisenToimenpideCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+14 of 22)"
-          ]
-        },
-        "rationale": "code list, 22 values"
-      }
-    },
-    {
-      "id": "co__paaomasaatavannimiCode",
-      "type": "Enumeration",
-      "label": "paaomasaatavannimiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
-          ]
-        },
-        "rationale": "code list, 5 values"
-      }
-    },
-    {
-      "id": "co__muutoksenTilaCode",
-      "type": "Enumeration",
-      "label": "muutoksenTilaCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4"
-          ]
-        },
-        "rationale": "code list, 4 values"
-      }
-    },
-    {
-      "id": "co__ulosottorekisterinTulosteenLajiCode",
-      "type": "Enumeration",
-      "label": "ulosottorekisterinTulosteenLajiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+1 of 9)"
-          ]
-        },
-        "rationale": "code list, 9 values"
-      }
-    },
-    {
-      "id": "co__vapaakuukausipaatoksenPerusteCode",
-      "type": "Enumeration",
-      "label": "vapaakuukausipaatoksenPerusteCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "… (+2 of 10)"
-          ]
-        },
-        "rationale": "code list, 10 values"
-      }
-    },
-    {
-      "id": "co__rajoittamispaatoksenPerusteCode",
-      "type": "Enumeration",
-      "label": "rajoittamispaatoksenPerusteCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3",
-            "4"
-          ]
-        },
-        "rationale": "code list, 4 values"
-      }
-    },
-    {
-      "id": "co__kuluttajaluottolainSopimuskoodiCode",
-      "type": "Enumeration",
-      "label": "kuluttajaluottolainSopimuskoodiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        "rationale": "code list, 3 values"
-      }
-    },
-    {
-      "id": "co__taytantoonpanoperusteenMuutosTyyppiCode",
-      "type": "Enumeration",
-      "label": "taytantoonpanoperusteenMuutosTyyppiCode",
-      "properties": {
-        "uml": {
-          "package": "pkg-co",
-          "literals": [
-            "1",
-            "2"
-          ]
-        },
-        "rationale": "code list, 2 values"
-      }
-    },
-    {
       "id": "pkg-he",
       "type": "Package",
       "label": "Hakemuserä",
@@ -11932,6 +10814,78 @@
           "message_sort": "asynchCall"
         }
       }
+    },
+    {
+      "id": "ct__gen__organisaatioTypeV1__organisaatioTypeV0",
+      "type": "Generalization",
+      "source": "ct__organisaatioTypeV1",
+      "target": "ct__organisaatioTypeV0",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "vt__gen__asiamies__velkojaType",
+      "type": "Generalization",
+      "source": "vt__asiamies-1",
+      "target": "vt__velkojaType",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "st__gen__asia__asiaTypeV0",
+      "type": "Generalization",
+      "source": "st__asia-1",
+      "target": "ct__asiaTypeV0",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "st__gen__asianVelallinen__henkiloTypeV0",
+      "type": "Generalization",
+      "source": "st__asianVelallinen-2",
+      "target": "ct__henkiloTypeV0",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "mk__gen__maksukielto__maksukieltoTaiMuutos",
+      "type": "Generalization",
+      "source": "mk__maksukielto",
+      "target": "mk__maksukieltoTaiMuutos",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "mk__gen__muutosilmoitus__maksukieltoTaiMuutos",
+      "type": "Generalization",
+      "source": "mk__muutosilmoitus",
+      "target": "mk__maksukieltoTaiMuutos",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "mk__gen__vastaavanPiiri__organisaatioTypeV0",
+      "type": "Generalization",
+      "source": "mk__vastaavanPiiri-3",
+      "target": "ct__organisaatioTypeV0",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "pp__gen__asia__asiaTypeV0",
+      "type": "Generalization",
+      "source": "pp__asia-1",
+      "target": "ct__asiaTypeV0",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "pp__gen__velallinen__henkiloTypeV0",
+      "type": "Generalization",
+      "source": "pp__velallinen-2",
+      "target": "ct__henkiloTypeV0",
+      "label": "",
+      "properties": {}
     }
   ],
   "plugins": {
@@ -12095,7 +11049,8 @@
             "ct__comp__elatuksenKohdeTypeV0__kuukausiElatusapu",
             "ct__comp__elatuksenKohdeTypeV0__kuukausiElatustuki",
             "ct__comp__virastonHenkilonYhteystiedotTypeV0__virastonHlonNimi",
-            "ct__comp__organisaatioTypeV1__tili"
+            "ct__comp__organisaatioTypeV1__tili",
+            "ct__gen__organisaatioTypeV1__organisaatioTypeV0"
           ],
           "groups": [
             {
@@ -12127,145 +11082,6 @@
                 "ct__organisaatioTypeV0",
                 "ct__organisaatioTypeV1",
                 "ct__sepatiliTypeV0"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "data-co",
-          "label": "Uljas Codes — tietomalli",
-          "kind": "uml-data",
-          "nodes": [
-            "pkg-co",
-            "co__asianMaksunTyyppiCode",
-            "co__asianMuutoskirjauksenLaatuCode",
-            "co__asianMuutoskirjauksenLajiCode",
-            "co__asianToimenpideCode",
-            "co__asianimiCode",
-            "co__esteenLajiCode",
-            "co__esteenSeliteMuuEsteCode",
-            "co__esteenSelitteenLaatuCode",
-            "co__haadonToteutumistapaCode",
-            "co__korkolajiCode",
-            "co__koronMaaraytymistapaCode",
-            "co__maksunKertymistapaCode",
-            "co__oikaisuselitteenLajiCode",
-            "co__saatavanimiCode",
-            "co__tuomioistuinCode",
-            "co__ulosotonMaksunLajiCode",
-            "co__ulosotonMaksunTarkenneCode",
-            "co__siirronsyyCode",
-            "co__hakemuslajiCode",
-            "co__maksumuutoksenLaatuCode",
-            "co__peruutuksenLaatuCode",
-            "co__saatavamuutoksenLaatuCode",
-            "co__saatavanOsuudenLajiCode",
-            "co__taytantoonpanotapaCode",
-            "co__viivastyskoronLajiCode",
-            "co__asianLiitetiedonLajiCode",
-            "co__asianLisatiedonlajiCode",
-            "co__henkilolajiCode",
-            "co__henkilotyyppiCode",
-            "co__kieliCode",
-            "co__kuntaCode",
-            "co__liitteenSaapumistapaCode",
-            "co__maaCode",
-            "co__kyllaEiCode",
-            "co__paatosLiitteenaCode",
-            "co__sukupuoliCode",
-            "co__tietolahdeCode",
-            "co__taytantoonpanoperusteenMaaraaikaCode",
-            "co__taytantoonpanotapaCode-2",
-            "co__valtakirjanLajiCode",
-            "co__valtuutuksenLaajuusCode",
-            "co__valuuttaCode",
-            "co__velallisenLisatiedonLajiCode",
-            "co__velallistilityksenTyyppiCode",
-            "co__asianVelallisenTilaCode",
-            "co__henkilonRooliCode",
-            "co__siirtoilmoituksenLajiCode",
-            "co__ulosmittauksenLajiCode",
-            "co__tunnistautumismenetelmaCode",
-            "co__maksukiellonPidatyksenLajiCode",
-            "co__maksukiellonVoimassaolonLajiCode",
-            "co__maksukiellonPeruuttaminenCode",
-            "co__velallisenToimenpideCode",
-            "co__paaomasaatavannimiCode",
-            "co__muutoksenTilaCode",
-            "co__ulosottorekisterinTulosteenLajiCode",
-            "co__vapaakuukausipaatoksenPerusteCode",
-            "co__rajoittamispaatoksenPerusteCode",
-            "co__kuluttajaluottolainSopimuskoodiCode",
-            "co__taytantoonpanoperusteenMuutosTyyppiCode"
-          ],
-          "relationships": [],
-          "groups": [
-            {
-              "id": "grp-co",
-              "label": "Uljas Codes",
-              "role": "semantic-boundary",
-              "semantic_source_id": "pkg-co",
-              "members": [
-                "co__asianMaksunTyyppiCode",
-                "co__asianMuutoskirjauksenLaatuCode",
-                "co__asianMuutoskirjauksenLajiCode",
-                "co__asianToimenpideCode",
-                "co__asianimiCode",
-                "co__esteenLajiCode",
-                "co__esteenSeliteMuuEsteCode",
-                "co__esteenSelitteenLaatuCode",
-                "co__haadonToteutumistapaCode",
-                "co__korkolajiCode",
-                "co__koronMaaraytymistapaCode",
-                "co__maksunKertymistapaCode",
-                "co__oikaisuselitteenLajiCode",
-                "co__saatavanimiCode",
-                "co__tuomioistuinCode",
-                "co__ulosotonMaksunLajiCode",
-                "co__ulosotonMaksunTarkenneCode",
-                "co__siirronsyyCode",
-                "co__hakemuslajiCode",
-                "co__maksumuutoksenLaatuCode",
-                "co__peruutuksenLaatuCode",
-                "co__saatavamuutoksenLaatuCode",
-                "co__saatavanOsuudenLajiCode",
-                "co__taytantoonpanotapaCode",
-                "co__viivastyskoronLajiCode",
-                "co__asianLiitetiedonLajiCode",
-                "co__asianLisatiedonlajiCode",
-                "co__henkilolajiCode",
-                "co__henkilotyyppiCode",
-                "co__kieliCode",
-                "co__kuntaCode",
-                "co__liitteenSaapumistapaCode",
-                "co__maaCode",
-                "co__kyllaEiCode",
-                "co__paatosLiitteenaCode",
-                "co__sukupuoliCode",
-                "co__tietolahdeCode",
-                "co__taytantoonpanoperusteenMaaraaikaCode",
-                "co__taytantoonpanotapaCode-2",
-                "co__valtakirjanLajiCode",
-                "co__valtuutuksenLaajuusCode",
-                "co__valuuttaCode",
-                "co__velallisenLisatiedonLajiCode",
-                "co__velallistilityksenTyyppiCode",
-                "co__asianVelallisenTilaCode",
-                "co__henkilonRooliCode",
-                "co__siirtoilmoituksenLajiCode",
-                "co__ulosmittauksenLajiCode",
-                "co__tunnistautumismenetelmaCode",
-                "co__maksukiellonPidatyksenLajiCode",
-                "co__maksukiellonVoimassaolonLajiCode",
-                "co__maksukiellonPeruuttaminenCode",
-                "co__velallisenToimenpideCode",
-                "co__paaomasaatavannimiCode",
-                "co__muutoksenTilaCode",
-                "co__ulosottorekisterinTulosteenLajiCode",
-                "co__vapaakuukausipaatoksenPerusteCode",
-                "co__rajoittamispaatoksenPerusteCode",
-                "co__kuluttajaluottolainSopimuskoodiCode",
-                "co__taytantoonpanoperusteenMuutosTyyppiCode"
               ]
             }
           ]
@@ -12557,7 +11373,8 @@
             "vt__comp__asia__asiamies",
             "vt__comp__asia__asianVastaavaOrganisaatio",
             "vt__comp__asia__asianVastaava",
-            "vt__comp__asia__muuTieto"
+            "vt__comp__asia__muuTieto",
+            "vt__gen__asiamies__velkojaType"
           ],
           "groups": [
             {
@@ -12601,13 +11418,17 @@
             "st__asianVelallinen-2",
             "st__asia-1",
             "st__velallinen-3",
-            "st__saldotiedustelu"
+            "st__saldotiedustelu",
+            "ct__asiaTypeV0",
+            "ct__henkiloTypeV0"
           ],
           "relationships": [
             "st__comp__saldotiedustelutiedot__saldotiedustelu",
             "st__comp__asia-1__asianVelallinen",
             "st__comp__saldotiedustelu__asia",
-            "st__comp__saldotiedustelu__velallinen"
+            "st__comp__saldotiedustelu__velallinen",
+            "st__gen__asia__asiaTypeV0",
+            "st__gen__asianVelallinen__henkiloTypeV0"
           ],
           "groups": [
             {
@@ -12879,7 +11700,8 @@
             "mk__muutosilmoitus",
             "mk__peruutus",
             "mk__vastaavanPiiri-3",
-            "mk__velallinen"
+            "mk__velallinen",
+            "ct__organisaatioTypeV0"
           ],
           "relationships": [
             "mk__comp__maksukieltoTaiMuutos__velallinen",
@@ -12890,7 +11712,10 @@
             "mk__comp__maksukieltoTietue__muutosilmoitus",
             "mk__comp__maksukieltoTietue__peruutus",
             "mk__comp__peruutus__velallinen",
-            "mk__comp__velallinen__vastaavanPiiri"
+            "mk__comp__velallinen__vastaavanPiiri",
+            "mk__gen__maksukielto__maksukieltoTaiMuutos",
+            "mk__gen__muutosilmoitus__maksukieltoTaiMuutos",
+            "mk__gen__vastaavanPiiri__organisaatioTypeV0"
           ],
           "groups": [
             {
@@ -12990,11 +11815,15 @@
             "pkg-pp",
             "pp__velallinen-2",
             "pp__asia-1",
-            "pp__passiiviperinnanPaattymisilmoitukset"
+            "pp__passiiviperinnanPaattymisilmoitukset",
+            "ct__asiaTypeV0",
+            "ct__henkiloTypeV0"
           ],
           "relationships": [
             "pp__comp__asia-1__velallinen",
-            "pp__comp__passiiviperinnanPaattymisilmoitukset__asia"
+            "pp__comp__passiiviperinnanPaattymisilmoitukset__asia",
+            "pp__gen__asia__asiaTypeV0",
+            "pp__gen__velallinen__henkiloTypeV0"
           ],
           "groups": [
             {

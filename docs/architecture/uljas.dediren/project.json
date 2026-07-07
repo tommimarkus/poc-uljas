@@ -197,32 +197,6 @@
       }
     },
     {
-      "id": "data-co",
-      "model": "uml",
-      "title": "Uljas Codes — tietomalli",
-      "diagramKind": "UML Data",
-      "question": "Mikä on Uljas Codes -sanoman rakenne, tietotyypit ja kardinaliteetit?",
-      "projection": {
-        "plugin": "generic-graph",
-        "target": "layout-request"
-      },
-      "metadata": {
-        "plugin": "generic-graph",
-        "target": "render-metadata",
-        "output": "generated/render-metadata/data-co.json"
-      },
-      "layout": {
-        "plugin": "elk-layout",
-        "output": "generated/layout/data-co.json"
-      },
-      "render": {
-        "plugin": "render",
-        "policy": "render-policy-uml.json",
-        "metadata": "generated/render-metadata/data-co.json",
-        "output": "generated/svg/data-co.svg"
-      }
-    },
-    {
       "id": "data-he",
       "model": "uml",
       "title": "Hakemuserä — tietomalli",
