@@ -10,6 +10,8 @@ straight from disk — no build step, no external assets, no network.
 - **Zoom** each plate, **toggle** light/dark, and **deep-link** a view with `#<id>`
   (e.g. `index.html#seq-submission`) to share one diagram.
 
+The visual language (tokens, typography, components) is documented in [DESIGN.md](DESIGN.md).
+
 ## Publish on GitHub Pages (free, zero-config)
 
 1. Push this `docs/` folder to `main` (already done).
