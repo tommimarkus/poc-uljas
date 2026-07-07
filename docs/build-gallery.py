@@ -247,17 +247,28 @@ let current = null, zoom = 100;
 })();
 
 const viewer = q('#viewer'), sheet = q('#sheet');
-// Available content width inside the sheet at 100% ("fit to width"). Zoom scales
-// off this so the diagram is sized in real pixels — the sheet then shrink-wraps it
-// (width:max-content) and grows past the viewport, keeping the rounded card intact.
+// Content width inside the sheet ("fit to width"): the viewer minus its own padding
+// minus the sheet's padding + border. At 100% the diagram fills this width — but the
+// scale is capped so it never enlarges past the SVG's real pixel width (100% = crisp
+// real size). Wide diagrams scale down to fit; narrow/tall ones sit at real size and
+// scroll vertically instead of being blown up. The sheet then shrink-wraps the result
+// (width:max-content) and the rounded card grows past the viewport intact on zoom-in.
 function availWidth(){
   const vs = getComputedStyle(viewer), ss = getComputedStyle(sheet);
-  const inner  = viewer.clientWidth - parseFloat(vs.paddingLeft) - parseFloat(vs.paddingRight);
-  const chrome = parseFloat(ss.paddingLeft) + parseFloat(ss.paddingRight)
-               + parseFloat(ss.borderLeftWidth) + parseFloat(ss.borderRightWidth);
-  return Math.max(0, inner - chrome);
+  return Math.max(0, viewer.clientWidth
+    - parseFloat(vs.paddingLeft) - parseFloat(vs.paddingRight)
+    - parseFloat(ss.paddingLeft) - parseFloat(ss.paddingRight)
+    - parseFloat(ss.borderLeftWidth) - parseFloat(ss.borderRightWidth));
 }
-function applyZoom(){ const s = q('#plate-host svg'); if (s) s.style.width = Math.round(availWidth() * zoom / 100) + 'px'; }
+// Intrinsic pixel width straight off the SVG (width attr, viewBox as fallback).
+function intrinsicWidth(s){
+  return parseFloat(s.getAttribute('width')) || (s.viewBox && s.viewBox.baseVal && s.viewBox.baseVal.width);
+}
+function applyZoom(){
+  const s = q('#plate-host svg'); if (!s) return;
+  const base = Math.min(intrinsicWidth(s), availWidth());   // fill the width, but never past real pixels
+  s.style.width = Math.round(base * zoom / 100) + 'px';
+}
 function setZoom(z){ zoom = Math.max(25, Math.min(400, z)); applyZoom(); }
 
 function select(id){
