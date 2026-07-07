@@ -1102,7 +1102,26 @@
       "properties": {
         "uml": {
           "package": "pkg-ct",
-          "attributes": [],
+          "attributes": [
+            {
+              "name": "tunnus",
+              "type": "henTunnusTypeV0",
+              "visibility": "public",
+              "multiplicity": "1"
+            },
+            {
+              "name": "henkilonNimi",
+              "type": "henNimiTypeV0",
+              "visibility": "public",
+              "multiplicity": "1"
+            },
+            {
+              "name": "osoite",
+              "type": "henOsoiteTypeV0",
+              "visibility": "public",
+              "multiplicity": "0..1"
+            }
+          ],
           "operations": []
         }
       }
@@ -1114,7 +1133,26 @@
       "properties": {
         "uml": {
           "package": "pkg-ct",
-          "attributes": [],
+          "attributes": [
+            {
+              "name": "asiaTiedot",
+              "type": "asiaTiedotTypeV0",
+              "visibility": "public",
+              "multiplicity": "1"
+            },
+            {
+              "name": "asianHakijanViitetiedot",
+              "type": "asianHakijanViitetiedotTypeV0",
+              "visibility": "public",
+              "multiplicity": "0..1"
+            },
+            {
+              "name": "taytantoonpanonPeruste",
+              "type": "taytantoonpanonPerusteTypeV0",
+              "visibility": "public",
+              "multiplicity": "0..*"
+            }
+          ],
           "operations": []
         }
       }
@@ -1470,7 +1508,20 @@
       "properties": {
         "uml": {
           "package": "pkg-ct",
-          "attributes": [],
+          "attributes": [
+            {
+              "name": "perittavaSaatava",
+              "type": "perittavaSaatavaTypeV0",
+              "visibility": "public",
+              "multiplicity": "1"
+            },
+            {
+              "name": "viivastyskorko",
+              "type": "viivastyskorkoTypeV0",
+              "visibility": "public",
+              "multiplicity": "0..1"
+            }
+          ],
           "operations": []
         }
       }
@@ -4808,6 +4859,18 @@
       }
     },
     {
+      "id": "vt__asiamies-1",
+      "type": "Class",
+      "label": "asiamies",
+      "properties": {
+        "uml": {
+          "package": "pkg-vt",
+          "attributes": [],
+          "operations": []
+        }
+      }
+    },
+    {
       "id": "vt__asia",
       "type": "Class",
       "label": "asia",
@@ -7043,6 +7106,18 @@
       }
     },
     {
+      "id": "pp__velallinen-2",
+      "type": "Class",
+      "label": "velallinen",
+      "properties": {
+        "uml": {
+          "package": "pkg-pp",
+          "attributes": [],
+          "operations": []
+        }
+      }
+    },
+    {
       "id": "pp__asia-1",
       "type": "Class",
       "label": "asia",
@@ -8657,7 +8732,7 @@
       "id": "vt__comp__asia__asiamies",
       "type": "Composition",
       "source": "vt__asia",
-      "target": "vt__velkojaType",
+      "target": "vt__asiamies-1",
       "label": "asiamies",
       "properties": {
         "uml": {
@@ -10457,7 +10532,7 @@
       "id": "pp__comp__asia-1__velallinen",
       "type": "Composition",
       "source": "pp__asia-1",
-      "target": "ct__henkiloTypeV0",
+      "target": "pp__velallinen-2",
       "label": "velallinen",
       "properties": {
         "uml": {
@@ -10800,6 +10875,14 @@
       "properties": {}
     },
     {
+      "id": "vt__gen__asiamies__velkojaType",
+      "type": "Generalization",
+      "source": "vt__asiamies-1",
+      "target": "vt__velkojaType",
+      "label": "",
+      "properties": {}
+    },
+    {
       "id": "st__gen__asia__asiaTypeV0",
       "type": "Generalization",
       "source": "st__asia-1",
@@ -10844,6 +10927,14 @@
       "type": "Generalization",
       "source": "pp__asia-1",
       "target": "ct__asiaTypeV0",
+      "label": "",
+      "properties": {}
+    },
+    {
+      "id": "pp__gen__velallinen__henkiloTypeV0",
+      "type": "Generalization",
+      "source": "pp__velallinen-2",
+      "target": "ct__henkiloTypeV0",
       "label": "",
       "properties": {}
     }
@@ -11297,6 +11388,7 @@
             "vt__kuukausiElatusType",
             "vt__ulosottoasiat",
             "vt__vastaanottaja",
+            "vt__asiamies-1",
             "vt__asia"
           ],
           "relationships": [
@@ -11325,7 +11417,8 @@
             "vt__comp__asia__asiamies",
             "vt__comp__asia__asianVastaavaOrganisaatio",
             "vt__comp__asia__asianVastaava",
-            "vt__comp__asia__muuTieto"
+            "vt__comp__asia__muuTieto",
+            "vt__gen__asiamies__velkojaType"
           ],
           "groups": [
             {
@@ -11353,6 +11446,7 @@
                 "vt__kuukausiElatusType",
                 "vt__ulosottoasiat",
                 "vt__vastaanottaja",
+                "vt__asiamies-1",
                 "vt__asia"
               ]
             }
@@ -11756,6 +11850,7 @@
           "label": "Passiiviperinnän päättymisilmoitus — tietomalli",
           "kind": "uml-class",
           "nodes": [
+            "pp__velallinen-2",
             "pp__asia-1",
             "pp__passiiviperinnanPaattymisilmoitukset",
             "ct__asiaTypeV0",
@@ -11764,7 +11859,8 @@
           "relationships": [
             "pp__comp__asia-1__velallinen",
             "pp__comp__passiiviperinnanPaattymisilmoitukset__asia",
-            "pp__gen__asia__asiaTypeV0"
+            "pp__gen__asia__asiaTypeV0",
+            "pp__gen__velallinen__henkiloTypeV0"
           ],
           "groups": [
             {
@@ -11773,6 +11869,7 @@
               "role": "semantic-boundary",
               "semantic_source_id": "pkg-pp",
               "members": [
+                "pp__velallinen-2",
                 "pp__asia-1",
                 "pp__passiiviperinnanPaattymisilmoitukset"
               ]

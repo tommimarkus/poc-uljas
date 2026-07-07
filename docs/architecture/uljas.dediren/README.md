@@ -48,15 +48,17 @@ reference. UML attributes reference them by name (e.g. `asiaNimi: asianimiCode`)
 
 Each UML message package carries a cross-notation
 `properties.uml.architecture_context` link (`elaborates`) to its ArchiMate
-`DataObject` in `model.json`. An `xsd:extension` that **adds** members — or whose
-named subtype discriminates a `<xsd:choice>` (e.g. `maksukielto` /
-`muutosilmoitus` in `data-mk`) — is modelled as a UML `Generalization` (▷) to the
-base, including the shared `uljasComplexTypes` bases (`asiaTypeV0`,
-`henkiloTypeV0`, `organisaatioTypeV0`), which then appear as referenced boxes in
-`data-st` / `data-pp` / `data-mk`. An `xsd:extension` that adds **nothing** on a
-single local element is instead collapsed into a directly-typed composition on
-the owner (e.g. `asia ◆— velallinen : henkiloTypeV0` in `data-pp`,
-`asia ◆— asiamies : velkojaType` in `data-vt`) rather than an empty subtype box.
+`DataObject` in `model.json`. Every `xsd:extension` of a base type is modelled as
+a UML `Generalization` (▷) to that base — whether it **adds** members (e.g. `pp` /
+`st` `asia`), only **renames** the base on a single element (`velallinen ▷
+henkiloTypeV0` in `data-pp`, `asiamies ▷ velkojaType` in `data-vt`), or
+**discriminates** a `<xsd:choice>` (`maksukielto` / `muutosilmoitus` in `data-mk`);
+a pure-rename subtype is left as an empty box over its populated base rather than
+collapsed away. The shared `uljasComplexTypes` bases (`asiaTypeV0`,
+`henkiloTypeV0`, `organisaatioTypeV0`, …) appear as referenced boxes in `data-st` /
+`data-pp` / `data-mk` and carry their members as attribute rows so the box is
+self-describing; `data-ct` additionally draws each complex member as a composition
+(◆) to its own child-type box.
 
 ## Regenerate
 
