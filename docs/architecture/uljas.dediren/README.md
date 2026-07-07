@@ -48,10 +48,15 @@ reference. UML attributes reference them by name (e.g. `asiaNimi: asianimiCode`)
 
 Each UML message package carries a cross-notation
 `properties.uml.architecture_context` link (`elaborates`) to its ArchiMate
-`DataObject` in `model.json`. Subtypes that `xsd:extension`-inherit a base carry
-a UML `Generalization` (▷) to that base — including the shared `uljasComplexTypes`
-bases (`asiaTypeV0`, `henkiloTypeV0`, `organisaatioTypeV0`), which appear as
-referenced boxes in `data-st` / `data-pp` / `data-mk`.
+`DataObject` in `model.json`. An `xsd:extension` that **adds** members — or whose
+named subtype discriminates a `<xsd:choice>` (e.g. `maksukielto` /
+`muutosilmoitus` in `data-mk`) — is modelled as a UML `Generalization` (▷) to the
+base, including the shared `uljasComplexTypes` bases (`asiaTypeV0`,
+`henkiloTypeV0`, `organisaatioTypeV0`), which then appear as referenced boxes in
+`data-st` / `data-pp` / `data-mk`. An `xsd:extension` that adds **nothing** on a
+single local element is instead collapsed into a directly-typed composition on
+the owner (e.g. `asia ◆— velallinen : henkiloTypeV0` in `data-pp`,
+`asia ◆— asiamies : velkojaType` in `data-vt`) rather than an empty subtype box.
 
 ## Regenerate
 
